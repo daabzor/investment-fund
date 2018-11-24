@@ -1,4 +1,4 @@
-package com.mateuszstaskiewicz.investmentfund.model;
+package com.mateuszstaskiewicz.investmentfund.model.statics;
 
 import lombok.Data;
 
@@ -6,14 +6,14 @@ import lombok.Data;
 public class PolishFund extends InvestmentFund {
 
     private static Long id;
-    public static FundType  fundType = FundType.POLISH;
+    public static FundType fundType = FundType.POLISH;
 
     static {
         id = 1L;
     }
 
     public PolishFund(final String name) {
-        super(id, name + Long.toString(id), fundType);
+        super(id, name + " " + Long.toString(id), fundType);
         id++;
     }
 

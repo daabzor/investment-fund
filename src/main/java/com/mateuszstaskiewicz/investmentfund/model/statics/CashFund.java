@@ -1,4 +1,4 @@
-package com.mateuszstaskiewicz.investmentfund.model;
+package com.mateuszstaskiewicz.investmentfund.model.statics;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ public class CashFund extends InvestmentFund {
     }
 
     public CashFund(final String name) {
-        super(id, name + Long.toString(id), fundType);
+        super(id, name + " " + Long.toString(id), fundType);
         id++;
     }
 

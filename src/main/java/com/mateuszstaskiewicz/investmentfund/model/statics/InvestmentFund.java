@@ -1,4 +1,4 @@
-package com.mateuszstaskiewicz.investmentfund.model;
+package com.mateuszstaskiewicz.investmentfund.model.statics;
 
 import lombok.Data;
 
