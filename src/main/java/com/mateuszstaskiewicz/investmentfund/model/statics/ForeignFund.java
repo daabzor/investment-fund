@@ -1,8 +1,10 @@
 package com.mateuszstaskiewicz.investmentfund.model.statics;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode
 public class ForeignFund extends InvestmentFund {
 
     private static Long id;

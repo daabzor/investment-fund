@@ -1,9 +1,9 @@
-package com.mateuszstaskiewicz.investmentfund.model.trades;
+package com.mateuszstaskiewicz.investmentfund.model.investment;
 
-import com.mateuszstaskiewicz.investmentfund.strategy.AggressiveStrategy;
-import com.mateuszstaskiewicz.investmentfund.strategy.BalancedStrategy;
-import com.mateuszstaskiewicz.investmentfund.strategy.SafeStrategy;
-import com.mateuszstaskiewicz.investmentfund.strategy.Strategy;
+import com.mateuszstaskiewicz.investmentfund.model.strategy.AggressiveStrategy;
+import com.mateuszstaskiewicz.investmentfund.model.strategy.BalancedStrategy;
+import com.mateuszstaskiewicz.investmentfund.model.strategy.SafeStrategy;
+import com.mateuszstaskiewicz.investmentfund.model.strategy.Strategy;
 
 public enum InvestmentType {
 

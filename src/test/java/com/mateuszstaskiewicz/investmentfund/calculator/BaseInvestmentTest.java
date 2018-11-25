@@ -1,8 +1,6 @@
-package com.mateuszstaskiewicz.investmentfund;
+package com.mateuszstaskiewicz.investmentfund.calculator;
 
 
-import com.mateuszstaskiewicz.investmentfund.calculator.GroupCalculator;
-import com.mateuszstaskiewicz.investmentfund.calculator.GroupFund;
 import com.mateuszstaskiewicz.investmentfund.model.statics.CashFund;
 import com.mateuszstaskiewicz.investmentfund.model.statics.ForeignFund;
 import com.mateuszstaskiewicz.investmentfund.model.statics.InvestmentFund;

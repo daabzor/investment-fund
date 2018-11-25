@@ -1,4 +1,4 @@
-package com.mateuszstaskiewicz.investmentfund.model.trades;
+package com.mateuszstaskiewicz.investmentfund.model.investment;
 
 import lombok.Data;
 

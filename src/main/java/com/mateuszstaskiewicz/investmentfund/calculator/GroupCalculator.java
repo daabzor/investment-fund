@@ -1,4 +1,4 @@
-package com.mateuszstaskiewicz.investmentfund;
+package com.mateuszstaskiewicz.investmentfund.calculator;
 
 import java.math.BigDecimal;
 

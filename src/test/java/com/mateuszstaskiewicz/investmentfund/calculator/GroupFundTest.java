@@ -1,6 +1,5 @@
-package com.mateuszstaskiewicz.investmentfund;
+package com.mateuszstaskiewicz.investmentfund.calculator;
 
-import com.mateuszstaskiewicz.investmentfund.calculator.GroupCalculator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
