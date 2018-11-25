@@ -1,9 +1,12 @@
 package com.mateuszstaskiewicz.investmentfund;
 
 import com.mateuszstaskiewicz.investmentfund.model.statics.FundType;
-import com.mateuszstaskiewicz.investmentfund.model.trades.GroupFund;
+
+import java.math.BigDecimal;
 
 public interface InvestmentCalculator {
 
-    GroupFund getCalculatedFund(FundType fundType);
+    String getAmountInFundForType(FundType fundType);
+    String getPercentInFundForType(FundType fundType);
+    String getUnSeparatedAmount();
 }
