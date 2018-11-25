@@ -6,7 +6,7 @@ import lombok.Data;
 public class ForeignFund extends InvestmentFund {
 
     private static Long id;
-    public static FundType  fundType = FundType.FOREIGN;
+    public static FundType fundType = FundType.FOREIGN;
 
     static {
         id = 1L;
