@@ -8,5 +8,6 @@ public interface InvestmentCalculator {
 
     String getAmountInFundForType(FundType fundType);
     String getPercentInFundForType(FundType fundType);
+    String getUnSeparatedAmountForType(FundType fundType);
     String getUnSeparatedAmount();
 }

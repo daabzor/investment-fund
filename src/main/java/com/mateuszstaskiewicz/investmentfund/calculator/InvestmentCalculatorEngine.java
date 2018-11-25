@@ -4,14 +4,12 @@ import com.mateuszstaskiewicz.investmentfund.model.statics.FundType;
 import com.mateuszstaskiewicz.investmentfund.model.statics.InvestmentFund;
 import com.mateuszstaskiewicz.investmentfund.model.trades.Investment;
 import com.mateuszstaskiewicz.investmentfund.strategy.Strategy;
-import lombok.AllArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@AllArgsConstructor
 public class InvestmentCalculatorEngine implements InvestmentCalculator {
 
     private BigDecimal amount;
@@ -40,6 +38,21 @@ public class InvestmentCalculatorEngine implements InvestmentCalculator {
 
     private GroupCalculator getCalculatedFund(FundType fundType) {
         return new GroupFund(getFundsGroup(fundType), amount, getStrategyPercentForType(fundType));
+    }
+
+    @Override
+    public String getAmountInFundForType(FundType fundType) {
+        return getCalculatedFund(fundType).getAmountOfInvestmentForOneFund().toString();
+    }
+
+    @Override
+    public String getPercentInFundForType(FundType fundType) {
+        return getCalculatedFund(fundType).getPercentOfInvestmentForOneFund().toString();
+    }
+
+    @Override
+    public String getUnSeparatedAmountForType(FundType fundType) {
+        return getCalculatedFund(fundType).getUnseparatedAmount().toString();
     }
 
     @Override
