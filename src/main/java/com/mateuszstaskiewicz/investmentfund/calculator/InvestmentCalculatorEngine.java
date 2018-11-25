@@ -55,14 +55,14 @@ public class InvestmentCalculatorEngine implements InvestmentCalculator {
     }
 
     @Override
-    public String getAggregatedAmountForType(FundType fundType) {
-        return getCalculatedFund(fundType).getAmountOfInvestmentForOneFund()
+    public String getAggregatedAmountFor(FundType fundType) {
+        return getCalculatedFund(fundType).getDividedAmount()
                 .multiply(new BigDecimal(getListSizeFor(fundType))).toString();
     }
 
     @Override
-    public String getAggregatedPercentForType(FundType fundType) {
-        return getCalculatedFund(fundType).getPercentOfInvestmentForOneFund()
+    public String getAggregatedPercentFor(FundType fundType) {
+        return getCalculatedFund(fundType).getDividedStrategyPercent()
                 .multiply(new BigDecimal(getListSizeFor(fundType))).toString();
     }
 
