@@ -1,4 +1,4 @@
-package com.mateuszstaskiewicz.investmentfund;
+package com.mateuszstaskiewicz.investmentfund.calculator;
 
 
 import com.mateuszstaskiewicz.investmentfund.model.statics.CashFund;

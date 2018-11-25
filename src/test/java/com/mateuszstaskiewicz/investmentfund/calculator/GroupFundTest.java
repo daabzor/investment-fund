@@ -1,4 +1,4 @@
-package com.mateuszstaskiewicz.investmentfund;
+package com.mateuszstaskiewicz.investmentfund.calculator;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

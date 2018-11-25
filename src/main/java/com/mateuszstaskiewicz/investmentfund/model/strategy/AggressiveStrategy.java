@@ -1,4 +1,4 @@
-package com.mateuszstaskiewicz.investmentfund.strategy;
+package com.mateuszstaskiewicz.investmentfund.model.strategy;
 
 import com.mateuszstaskiewicz.investmentfund.model.statics.FundType;
 
@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SafeStrategy extends AbstractStrategy {
+public class AggressiveStrategy extends AbstractStrategy {
 
     private Map<FundType, BigDecimal> strategy = new HashMap<FundType, BigDecimal>(){{
-        put(FundType.POLISH, new BigDecimal("0.20"));
-        put(FundType.FOREIGN, new BigDecimal("0.75"));
-        put(FundType.CASH, new BigDecimal("0.05"));
+        put(FundType.POLISH, new BigDecimal("0.40"));
+        put(FundType.FOREIGN, new BigDecimal("0.20"));
+        put(FundType.CASH, new BigDecimal("0.40"));
 
     }};
 
-    public SafeStrategy() {
+    public AggressiveStrategy() {
         isStrategyValid(new ArrayList<>(strategy.values()));
     }
 

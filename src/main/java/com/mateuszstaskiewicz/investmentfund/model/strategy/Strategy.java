@@ -1,4 +1,4 @@
-package com.mateuszstaskiewicz.investmentfund.strategy;
+package com.mateuszstaskiewicz.investmentfund.model.strategy;
 
 import com.mateuszstaskiewicz.investmentfund.model.statics.FundType;
 
