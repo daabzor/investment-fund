@@ -24,9 +24,9 @@ public class GroupFundTest extends BaseInvestmentTest{
         GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
 
         //then
-        assertEquals(new BigDecimal("1000"), groupCalculatorForPolishFunds.getAmountOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("2500"), groupCalculatorForForeignFunds.getAmountOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("500"), groupCalculatorForCashFunds.getAmountOfInvestmentForOneFund());
+        assertEquals(new BigDecimal("1000"), groupCalculatorForPolishFunds.getDividedAmount());
+        assertEquals(new BigDecimal("2500"), groupCalculatorForForeignFunds.getDividedAmount());
+        assertEquals(new BigDecimal("500"), groupCalculatorForCashFunds.getDividedAmount());
     }
 
     @Test
@@ -39,9 +39,9 @@ public class GroupFundTest extends BaseInvestmentTest{
         GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
 
         //then
-        assertEquals(new BigDecimal("0.1000"), groupCalculatorForPolishFunds.getPercentOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("0.2500"), groupCalculatorForForeignFunds.getPercentOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("0.0500"), groupCalculatorForCashFunds.getPercentOfInvestmentForOneFund());
+        assertEquals(new BigDecimal("0.1000"), groupCalculatorForPolishFunds.getDividedStrategyPercent());
+        assertEquals(new BigDecimal("0.2500"), groupCalculatorForForeignFunds.getDividedStrategyPercent());
+        assertEquals(new BigDecimal("0.0500"), groupCalculatorForCashFunds.getDividedStrategyPercent());
     }
 
     @Test
@@ -86,9 +86,9 @@ public class GroupFundTest extends BaseInvestmentTest{
         GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
 
         //then
-        assertEquals(new BigDecimal("1000"), groupCalculatorForPolishFunds.getAmountOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("2500"), groupCalculatorForForeignFunds.getAmountOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("500"), groupCalculatorForCashFunds.getAmountOfInvestmentForOneFund());
+        assertEquals(new BigDecimal("1000"), groupCalculatorForPolishFunds.getDividedAmount());
+        assertEquals(new BigDecimal("2500"), groupCalculatorForForeignFunds.getDividedAmount());
+        assertEquals(new BigDecimal("500"), groupCalculatorForCashFunds.getDividedAmount());
     }
 
     @Test
@@ -101,9 +101,9 @@ public class GroupFundTest extends BaseInvestmentTest{
         GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
 
         //then
-        assertEquals(new BigDecimal("0.1000"), groupCalculatorForPolishFunds.getPercentOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("0.2500"), groupCalculatorForForeignFunds.getPercentOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("0.0500"), groupCalculatorForCashFunds.getPercentOfInvestmentForOneFund());
+        assertEquals(new BigDecimal("0.1000"), groupCalculatorForPolishFunds.getDividedStrategyPercent());
+        assertEquals(new BigDecimal("0.2500"), groupCalculatorForForeignFunds.getDividedStrategyPercent());
+        assertEquals(new BigDecimal("0.0500"), groupCalculatorForCashFunds.getDividedStrategyPercent());
     }
 
     @Test
@@ -147,9 +147,9 @@ public class GroupFundTest extends BaseInvestmentTest{
         GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
 
         //then
-        assertEquals(new BigDecimal("667"), groupCalculatorForPolishFunds.getAmountOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("3751"), groupCalculatorForForeignFunds.getAmountOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("500"), groupCalculatorForCashFunds.getAmountOfInvestmentForOneFund());
+        assertEquals(new BigDecimal("667"), groupCalculatorForPolishFunds.getDividedAmount());
+        assertEquals(new BigDecimal("3751"), groupCalculatorForForeignFunds.getDividedAmount());
+        assertEquals(new BigDecimal("500"), groupCalculatorForCashFunds.getDividedAmount());
     }
 
     @Test
@@ -162,9 +162,9 @@ public class GroupFundTest extends BaseInvestmentTest{
         GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
 
         //then
-        assertEquals(new BigDecimal("0.0666"), groupCalculatorForPolishFunds.getPercentOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("0.3750"), groupCalculatorForForeignFunds.getPercentOfInvestmentForOneFund());
-        assertEquals(new BigDecimal("0.0500"), groupCalculatorForCashFunds.getPercentOfInvestmentForOneFund());
+        assertEquals(new BigDecimal("0.0666"), groupCalculatorForPolishFunds.getDividedStrategyPercent());
+        assertEquals(new BigDecimal("0.3750"), groupCalculatorForForeignFunds.getDividedStrategyPercent());
+        assertEquals(new BigDecimal("0.0500"), groupCalculatorForCashFunds.getDividedStrategyPercent());
     }
 
     @Test

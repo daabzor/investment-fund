@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
     GroupFund class keeps information about list of funds, investment amount and investment strategy percent.
+
     This class is designed to work for each type of investment fund.
  */
 public class GroupFund implements GroupCalculator {
@@ -29,12 +30,12 @@ public class GroupFund implements GroupCalculator {
     }
 
     @Override
-    public BigDecimal getPercentOfInvestmentForOneFund() {
+    public BigDecimal getDividedStrategyPercent() {
         return strategyPercent.divide(getSizeOfGroup(), 4, RoundingMode.DOWN);
     }
 
     @Override
-    public BigDecimal getAmountOfInvestmentForOneFund() {
+    public BigDecimal getDividedAmount() {
         return amount.multiply(strategyPercent).setScale(0, RoundingMode.DOWN)
                 .divide(getSizeOfGroup(), 3, RoundingMode.HALF_UP).setScale(0, RoundingMode.DOWN);
     }
@@ -42,7 +43,7 @@ public class GroupFund implements GroupCalculator {
     @Override
     public BigDecimal getUnseparatedAmount() {
         return amount.multiply(strategyPercent)
-                .subtract(getAmountOfInvestmentForOneFund().multiply(getSizeOfGroup()))
+                .subtract(getDividedAmount().multiply(getSizeOfGroup()))
                 .setScale(2, RoundingMode.DOWN);
     }
 }

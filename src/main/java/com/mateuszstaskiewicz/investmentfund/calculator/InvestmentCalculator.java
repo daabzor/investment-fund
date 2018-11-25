@@ -12,9 +12,9 @@ public interface InvestmentCalculator {
 
     String getUnSeparatedAmount();
 
-    String getAggregatedAmountForType(FundType fundType);
+    String getAggregatedAmountFor(FundType fundType);
 
-    String getAggregatedPercentForType(FundType fundType);
+    String getAggregatedPercentFor(FundType fundType);
 
     Map<InvestmentFund, Map<String, String>> getAggregatedInvestmentInfoForType(FundType type);
 }

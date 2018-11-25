@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public interface GroupCalculator {
 
-    BigDecimal getPercentOfInvestmentForOneFund();
-    BigDecimal getAmountOfInvestmentForOneFund();
+    BigDecimal getDividedStrategyPercent();
+    BigDecimal getDividedAmount();
     BigDecimal getUnseparatedAmount();
 
 }
