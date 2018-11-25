@@ -1,5 +1,6 @@
-package com.mateuszstaskiewicz.investmentfund.model.trades;
+package com.mateuszstaskiewicz.investmentfund;
 
+import com.mateuszstaskiewicz.investmentfund.GroupCalculator;
 import com.mateuszstaskiewicz.investmentfund.model.statics.InvestmentFund;
 
 import java.math.BigDecimal;

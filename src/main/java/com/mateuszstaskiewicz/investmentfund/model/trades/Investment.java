@@ -1,17 +1,18 @@
 package com.mateuszstaskiewicz.investmentfund.model.trades;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
-@AllArgsConstructor
 public class Investment {
 
     private InvestmentType investmentType;
 
     private BigDecimal investmentAmount;
 
-
+    public Investment(InvestmentType investmentType, String investmentAmount) {
+        this.investmentType = investmentType;
+        this.investmentAmount = new BigDecimal(investmentAmount);
+    }
 }

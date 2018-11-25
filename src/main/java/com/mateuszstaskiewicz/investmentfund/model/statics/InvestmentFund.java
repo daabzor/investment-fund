@@ -19,7 +19,7 @@ public abstract class InvestmentFund {
         generalIdCounter = 1L;
     }
 
-    public InvestmentFund(Long id, String name, FundType fundType) {
+    public InvestmentFund(final Long id, final String name, final FundType fundType) {
         this.id = id;
         this.name = name;
         this.fundType = fundType;
