@@ -5,7 +5,9 @@ import java.math.BigDecimal;
 public interface GroupCalculator {
 
     BigDecimal getDividedStrategyPercent();
+
     BigDecimal getDividedAmount();
-    BigDecimal getUnseparatedAmount();
+
+    BigDecimal getUnSeparatedAmount();
 
 }

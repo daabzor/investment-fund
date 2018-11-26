@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class BalancedStrategy extends AbstractStrategy {
 
-    private Map<FundType, BigDecimal> strategy = new HashMap<FundType, BigDecimal>(){{
+    private static final Map<FundType, BigDecimal> STRATEGY = new HashMap<FundType, BigDecimal>(){{
         put(FundType.POLISH, new BigDecimal("0.30"));
         put(FundType.FOREIGN, new BigDecimal("0.60"));
         put(FundType.CASH, new BigDecimal("0.10"));
@@ -17,12 +17,12 @@ public class BalancedStrategy extends AbstractStrategy {
     }};
 
     public BalancedStrategy() {
-        isStrategyValid(new ArrayList<>(strategy.values()));
+        isStrategyValid(new ArrayList<>(STRATEGY.values()));
     }
 
     @Override
-    public BigDecimal getStrategyRate(FundType fundType) {
-        return strategy.get(fundType);
+    public BigDecimal getStrategyRate(final FundType fundType) {
+        return STRATEGY.get(fundType);
     }
 
 }

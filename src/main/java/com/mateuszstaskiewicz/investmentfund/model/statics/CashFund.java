@@ -8,14 +8,15 @@ import lombok.EqualsAndHashCode;
 public class CashFund extends InvestmentFund {
 
     private static Long id;
-    public static FundType fundType = FundType.CASH;
+
+    public static final FundType FUND_TYPE = FundType.CASH;
 
     static {
         id = 1L;
     }
 
     public CashFund(final String name) {
-        super(id, name + " " + Long.toString(id), fundType);
+        super(id, name + " " + Long.toString(id), FUND_TYPE);
         id++;
     }
 

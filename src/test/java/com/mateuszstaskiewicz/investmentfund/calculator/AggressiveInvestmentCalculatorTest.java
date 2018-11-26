@@ -2,10 +2,14 @@ package com.mateuszstaskiewicz.investmentfund.calculator;
 
 import com.mateuszstaskiewicz.investmentfund.model.statics.FundType;
 import org.junit.Test;
-
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class AggressiveInvestmentCalculatorTest extends BaseInvestmentTest {
 
 //Test for example number 1
@@ -65,9 +69,9 @@ public void getUnSeparatedAmountForTypeTest1() {
     final InvestmentCalculator investmentCalculator = new InvestmentCalculatorEngine(AGGRESSIVE_INVESTMENT_AMOUNT_10000, LIST_OF_2_POL_3_FOR_1_CASH_FUNDS);
 
     //when
-    final String unSeparatedAmountForPolishFund = investmentCalculator.getCalculatedFund(FundType.POLISH).getUnseparatedAmount().toString();
-    final String unSeparatedAmountForForeignFund = investmentCalculator.getCalculatedFund(FundType.FOREIGN).getUnseparatedAmount().toString();
-    final String unSeparatedAmountForCashFund = investmentCalculator.getCalculatedFund(FundType.CASH).getUnseparatedAmount().toString();
+    final String unSeparatedAmountForPolishFund = investmentCalculator.getCalculatedFund(FundType.POLISH).getUnSeparatedAmount().toString();
+    final String unSeparatedAmountForForeignFund = investmentCalculator.getCalculatedFund(FundType.FOREIGN).getUnSeparatedAmount().toString();
+    final String unSeparatedAmountForCashFund = investmentCalculator.getCalculatedFund(FundType.CASH).getUnSeparatedAmount().toString();
 
     final String unSeparatedAmount = investmentCalculator.getUnSeparatedAmount();
 
@@ -136,9 +140,9 @@ public void getUnSeparatedAmountForTypeTest1() {
         final InvestmentCalculator investmentCalculator = new InvestmentCalculatorEngine(AGGRESSIVE_INVESTMENT_AMOUNT_10001, LIST_OF_2_POL_3_FOR_1_CASH_FUNDS);
 
         //when
-        final String unSeparatedAmountForPolishFund = investmentCalculator.getCalculatedFund(FundType.POLISH).getUnseparatedAmount().toString();
-        final String unSeparatedAmountForForeignFund = investmentCalculator.getCalculatedFund(FundType.FOREIGN).getUnseparatedAmount().toString();
-        final String unSeparatedAmountForCashFund = investmentCalculator.getCalculatedFund(FundType.CASH).getUnseparatedAmount().toString();
+        final String unSeparatedAmountForPolishFund = investmentCalculator.getCalculatedFund(FundType.POLISH).getUnSeparatedAmount().toString();
+        final String unSeparatedAmountForForeignFund = investmentCalculator.getCalculatedFund(FundType.FOREIGN).getUnSeparatedAmount().toString();
+        final String unSeparatedAmountForCashFund = investmentCalculator.getCalculatedFund(FundType.CASH).getUnSeparatedAmount().toString();
 
         final String unSeparatedAmount = investmentCalculator.getUnSeparatedAmount();
 
@@ -206,9 +210,9 @@ public void getUnSeparatedAmountForTypeTest1() {
         final InvestmentCalculator investmentCalculator = new InvestmentCalculatorEngine(AGGRESSIVE_INVESTMENT_AMOUNT_10005, LIST_OF_3_POL_2_FOR_1_CASH_FUNDS);
 
         //when
-        final String unSeparatedAmountForPolishFund = investmentCalculator.getCalculatedFund(FundType.POLISH).getUnseparatedAmount().toString();
-        final String unSeparatedAmountForForeignFund = investmentCalculator.getCalculatedFund(FundType.FOREIGN).getUnseparatedAmount().toString();
-        final String unSeparatedAmountForCashFund = investmentCalculator.getCalculatedFund(FundType.CASH).getUnseparatedAmount().toString();
+        final String unSeparatedAmountForPolishFund = investmentCalculator.getCalculatedFund(FundType.POLISH).getUnSeparatedAmount().toString();
+        final String unSeparatedAmountForForeignFund = investmentCalculator.getCalculatedFund(FundType.FOREIGN).getUnSeparatedAmount().toString();
+        final String unSeparatedAmountForCashFund = investmentCalculator.getCalculatedFund(FundType.CASH).getUnSeparatedAmount().toString();
 
         final String unSeparatedAmount = investmentCalculator.getUnSeparatedAmount();
 
@@ -219,4 +223,5 @@ public void getUnSeparatedAmountForTypeTest1() {
 
         assertEquals("1.00", unSeparatedAmount);
     }
+
 }

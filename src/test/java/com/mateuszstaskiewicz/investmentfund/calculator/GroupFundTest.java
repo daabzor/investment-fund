@@ -15,186 +15,217 @@ public class GroupFundTest extends BaseInvestmentTest{
 
     //Tests for example number 1
     @Test
-    public void investmentAmountForDifferentLengthFundListShouldBeCorrect() {
-        //given - test data above
+    public void getDividedAmountTest1() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10000", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10000", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10000", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10000", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
+        final BigDecimal dividedAmountForPolishFund = groupCalculatorForPolishFunds.getDividedAmount();
+        final BigDecimal dividedAmountForForeignFund = groupCalculatorForForeignFunds.getDividedAmount();
+        final BigDecimal dividedAmountForCashFund = groupCalculatorForCashFunds.getDividedAmount();
 
         //then
-        assertEquals(new BigDecimal("1000"), groupCalculatorForPolishFunds.getDividedAmount());
-        assertEquals(new BigDecimal("2500"), groupCalculatorForForeignFunds.getDividedAmount());
-        assertEquals(new BigDecimal("500"), groupCalculatorForCashFunds.getDividedAmount());
+        assertEquals(new BigDecimal("1000"), dividedAmountForPolishFund);
+        assertEquals(new BigDecimal("2500"), dividedAmountForForeignFund);
+        assertEquals(new BigDecimal("500"), dividedAmountForCashFund);
     }
 
     @Test
-    public void investmentPercentForDifferentLengthFundListShouldBeCorrect() {
-        //given - test data above
+    public void getDividedStrategyPercentTest1() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10000", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10000", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10000", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10000", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
+        final BigDecimal dividedStrategyPercentForPolishFund = groupCalculatorForPolishFunds.getDividedStrategyPercent();
+        final BigDecimal dividedStrategyPercentForForeignFund = groupCalculatorForForeignFunds.getDividedStrategyPercent();
+        final BigDecimal dividedStrategyPercentForCashFund = groupCalculatorForCashFunds.getDividedStrategyPercent();
 
         //then
-        assertEquals(new BigDecimal("0.1000"), groupCalculatorForPolishFunds.getDividedStrategyPercent());
-        assertEquals(new BigDecimal("0.2500"), groupCalculatorForForeignFunds.getDividedStrategyPercent());
-        assertEquals(new BigDecimal("0.0500"), groupCalculatorForCashFunds.getDividedStrategyPercent());
+        assertEquals(new BigDecimal("0.1000"), dividedStrategyPercentForPolishFund);
+        assertEquals(new BigDecimal("0.2500"), dividedStrategyPercentForForeignFund);
+        assertEquals(new BigDecimal("0.0500"), dividedStrategyPercentForCashFund);
     }
 
     @Test
-    public void ForDifferentLengthFundListShouldBeCorrect() {
-        //given - test data above
+    public void getUnSeparatedAmountTest1() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10000", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10000", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10000", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10000", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
+        final BigDecimal unSeparatedAmountForPolishFund = groupCalculatorForPolishFunds.getUnSeparatedAmount();
+        final BigDecimal unSeparatedAmountForForeignFund = groupCalculatorForForeignFunds.getUnSeparatedAmount();
+        final BigDecimal unSeparatedAmountForCashFund = groupCalculatorForCashFunds.getUnSeparatedAmount();
 
         //then
-        assertEquals(new BigDecimal("0.00"), groupCalculatorForPolishFunds.getUnseparatedAmount());
-        assertEquals(new BigDecimal("0.00"), groupCalculatorForForeignFunds.getUnseparatedAmount());
-        assertEquals(new BigDecimal("0.00"), groupCalculatorForCashFunds.getUnseparatedAmount());
+        assertEquals(new BigDecimal("0.00"), unSeparatedAmountForPolishFund);
+        assertEquals(new BigDecimal("0.00"), unSeparatedAmountForForeignFund);
+        assertEquals(new BigDecimal("0.00"), unSeparatedAmountForCashFund);
     }
 
     @Test
-    public void sumForUnseparatedAmountShouldBe0() {
-        //given - test data above
+    public void sumOfUnSeparatedAmountTest1() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10000", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10000", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10000", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10000", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10000", "0.05");
+        final BigDecimal sumOfUnSeparatedAmount = groupCalculatorForPolishFunds.getUnSeparatedAmount()
+                .add(groupCalculatorForForeignFunds.getUnSeparatedAmount())
+                .add(groupCalculatorForCashFunds.getUnSeparatedAmount());
 
         //then
-        assertEquals(new BigDecimal("0.00"), groupCalculatorForPolishFunds.getUnseparatedAmount()
-                .add(groupCalculatorForForeignFunds.getUnseparatedAmount())
-                .add(groupCalculatorForCashFunds.getUnseparatedAmount()));
+        assertEquals(new BigDecimal("0.00"), sumOfUnSeparatedAmount);
     }
 
 
     //Tests for example number 2
     @Test
-    public void investmentAmountForDifferentLengthFundListShouldBeCorrect2() {
-        //given - test data above
+    public void getDividedAmountTest2() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10001", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10001", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10001", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10001", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
+        final BigDecimal dividedAmountForPolishFund = groupCalculatorForPolishFunds.getDividedAmount();
+        final BigDecimal dividedAmountForForeignFund = groupCalculatorForForeignFunds.getDividedAmount();
+        final BigDecimal dividedAmountForCashFund = groupCalculatorForCashFunds.getDividedAmount();
 
         //then
-        assertEquals(new BigDecimal("1000"), groupCalculatorForPolishFunds.getDividedAmount());
-        assertEquals(new BigDecimal("2500"), groupCalculatorForForeignFunds.getDividedAmount());
-        assertEquals(new BigDecimal("500"), groupCalculatorForCashFunds.getDividedAmount());
+        assertEquals(new BigDecimal("1000"), dividedAmountForPolishFund);
+        assertEquals(new BigDecimal("2500"), dividedAmountForForeignFund);
+        assertEquals(new BigDecimal("500"), dividedAmountForCashFund);
     }
 
     @Test
-    public void investmentPercentForDifferentLengthFundListShouldBeCorrect2() {
-        //given - test data above
+    public void getDividedStrategyPercentTest2() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10001", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10001", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10001", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10001", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
+        final BigDecimal dividedStrategyPercentForPolishFund = groupCalculatorForPolishFunds.getDividedStrategyPercent();
+        final BigDecimal dividedStrategyPercentForForeignFund = groupCalculatorForForeignFunds.getDividedStrategyPercent();
+        final BigDecimal dividedStrategyPercentForCashFund = groupCalculatorForCashFunds.getDividedStrategyPercent();
 
         //then
-        assertEquals(new BigDecimal("0.1000"), groupCalculatorForPolishFunds.getDividedStrategyPercent());
-        assertEquals(new BigDecimal("0.2500"), groupCalculatorForForeignFunds.getDividedStrategyPercent());
-        assertEquals(new BigDecimal("0.0500"), groupCalculatorForCashFunds.getDividedStrategyPercent());
+        assertEquals(new BigDecimal("0.1000"), dividedStrategyPercentForPolishFund);
+        assertEquals(new BigDecimal("0.2500"), dividedStrategyPercentForForeignFund);
+        assertEquals(new BigDecimal("0.0500"), dividedStrategyPercentForCashFund);
     }
 
     @Test
-    public void ForDifferentLengthFundListShouldBeCorrect2() {
-        //given - test data above
+    public void getUnSeparatedAmountTest2() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10001", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10001", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10001", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10001", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
+        final BigDecimal unSeparatedAmountForPolishFund = groupCalculatorForPolishFunds.getUnSeparatedAmount();
+        final BigDecimal unSeparatedAmountForForeignFund = groupCalculatorForForeignFunds.getUnSeparatedAmount();
+        final BigDecimal unSeparatedAmountForCashFund = groupCalculatorForCashFunds.getUnSeparatedAmount();
 
         //then
-        assertEquals(new BigDecimal("0.20"), groupCalculatorForPolishFunds.getUnseparatedAmount());
-        assertEquals(new BigDecimal("0.75"), groupCalculatorForForeignFunds.getUnseparatedAmount());
-        assertEquals(new BigDecimal("0.05"), groupCalculatorForCashFunds.getUnseparatedAmount());
+        assertEquals(new BigDecimal("0.20"), unSeparatedAmountForPolishFund);
+        assertEquals(new BigDecimal("0.75"), unSeparatedAmountForForeignFund);
+        assertEquals(new BigDecimal("0.05"), unSeparatedAmountForCashFund);
     }
 
     @Test
-    public void sumForUnseparatedAmountShouldBe1() {
-        //given - test data above
+    public void sumOfUnSeparatedAmountTest2() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10001", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10001", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(2,"10001", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(3,"10001", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10001", "0.05");
+        final BigDecimal sumOfUnSeparatedAmount = groupCalculatorForPolishFunds.getUnSeparatedAmount()
+                .add(groupCalculatorForForeignFunds.getUnSeparatedAmount())
+                .add(groupCalculatorForCashFunds.getUnSeparatedAmount());
 
         //then
-        assertEquals(new BigDecimal("1.00"), groupCalculatorForPolishFunds.getUnseparatedAmount()
-                                                    .add(groupCalculatorForForeignFunds.getUnseparatedAmount())
-                                                    .add(groupCalculatorForCashFunds.getUnseparatedAmount()));
+        assertEquals(new BigDecimal("1.00"), sumOfUnSeparatedAmount);
     }
 
     //Tests for example number 3
     @Test
-    public void investmentAmountForDifferentLengthFundListShouldBeCorrect3() {
-        //given - test data above
+    public void getDividedAmountTest3() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(3,"10005", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(2,"10005", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(3,"10005", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(2,"10005", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
+        final BigDecimal dividedAmountForPolishFund = groupCalculatorForPolishFunds.getDividedAmount();
+        final BigDecimal dividedAmountForForeignFund = groupCalculatorForForeignFunds.getDividedAmount();
+        final BigDecimal dividedAmountForCashFund = groupCalculatorForCashFunds.getDividedAmount();
 
         //then
-        assertEquals(new BigDecimal("667"), groupCalculatorForPolishFunds.getDividedAmount());
-        assertEquals(new BigDecimal("3751"), groupCalculatorForForeignFunds.getDividedAmount());
-        assertEquals(new BigDecimal("500"), groupCalculatorForCashFunds.getDividedAmount());
+        assertEquals(new BigDecimal("667"), dividedAmountForPolishFund);
+        assertEquals(new BigDecimal("3751"), dividedAmountForForeignFund);
+        assertEquals(new BigDecimal("500"), dividedAmountForCashFund
+        );
     }
 
     @Test
-    public void investmentPercentForDifferentLengthFundListShouldBeCorrect3() {
-        //given - test data above
+    public void getDividedStrategyPercentTest3() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(3,"10005", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(2,"10005", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(3,"10005", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(2,"10005", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
+        final BigDecimal dividedStrategyPercentForPolishFund = groupCalculatorForPolishFunds.getDividedStrategyPercent();
+        final BigDecimal dividedStrategyPercentForForeignFund = groupCalculatorForForeignFunds.getDividedStrategyPercent();
+        final BigDecimal dividedStrategyPercentForCashFund = groupCalculatorForCashFunds.getDividedStrategyPercent();
 
         //then
-        assertEquals(new BigDecimal("0.0666"), groupCalculatorForPolishFunds.getDividedStrategyPercent());
-        assertEquals(new BigDecimal("0.3750"), groupCalculatorForForeignFunds.getDividedStrategyPercent());
-        assertEquals(new BigDecimal("0.0500"), groupCalculatorForCashFunds.getDividedStrategyPercent());
+        assertEquals(new BigDecimal("0.0666"), dividedStrategyPercentForPolishFund);
+        assertEquals(new BigDecimal("0.3750"), dividedStrategyPercentForForeignFund);
+        assertEquals(new BigDecimal("0.0500"), dividedStrategyPercentForCashFund);
     }
 
     @Test
-    public void ForDifferentLengthFundListShouldBeCorrect3() {
-        //given - test data above
+    public void getUnSeparatedAmountTest3() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(3,"10005", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(2,"10005", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(3,"10005", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(2,"10005", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
+        final BigDecimal unSeparatedAmountForPolishFund = groupCalculatorForPolishFunds.getUnSeparatedAmount();
+        final BigDecimal unSeparatedAmountForForeignFund = groupCalculatorForForeignFunds.getUnSeparatedAmount();
+        final BigDecimal unSeparatedAmountForCashFund = groupCalculatorForCashFunds.getUnSeparatedAmount();
 
         //then
-        assertEquals(new BigDecimal("0.00"), groupCalculatorForPolishFunds.getUnseparatedAmount());
-        assertEquals(new BigDecimal("1.75"), groupCalculatorForForeignFunds.getUnseparatedAmount());
-        assertEquals(new BigDecimal("0.25"), groupCalculatorForCashFunds.getUnseparatedAmount());
+        assertEquals(new BigDecimal("0.00"), unSeparatedAmountForPolishFund);
+        assertEquals(new BigDecimal("1.75"), unSeparatedAmountForForeignFund);
+        assertEquals(new BigDecimal("0.25"), unSeparatedAmountForCashFund);
     }
 
     @Test
-    public void sumForUnSeparatedAmountShouldBe2() {
-        //given - test data above
+    public void sumOfUnSeparatedAmountTest3() {
+        //given
+        final GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(3,"10005", "0.20");
+        final GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(2,"10005", "0.75");
+        final GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
 
         //when
-        GroupCalculator groupCalculatorForPolishFunds = createGroupCalculator(3,"10005", "0.20");
-        GroupCalculator groupCalculatorForForeignFunds = createGroupCalculator(2,"10005", "0.75");
-        GroupCalculator groupCalculatorForCashFunds = createGroupCalculator(1,"10005", "0.05");
+        final BigDecimal sumOfUnSeparatedAmount = groupCalculatorForPolishFunds.getUnSeparatedAmount()
+                .add(groupCalculatorForForeignFunds.getUnSeparatedAmount())
+                .add(groupCalculatorForCashFunds.getUnSeparatedAmount());
 
         //then
-        assertEquals(new BigDecimal("2.00"), groupCalculatorForPolishFunds.getUnseparatedAmount()
-                .add(groupCalculatorForForeignFunds.getUnseparatedAmount())
-                .add(groupCalculatorForCashFunds.getUnseparatedAmount()));
+        assertEquals(new BigDecimal("2.00"), sumOfUnSeparatedAmount);
     }
 
 }
