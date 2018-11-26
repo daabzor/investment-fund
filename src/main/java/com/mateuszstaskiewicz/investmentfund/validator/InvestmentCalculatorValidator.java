@@ -6,10 +6,8 @@ import com.mateuszstaskiewicz.investmentfund.model.statics.InvestmentFund;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class InvestmentCalculatorValidator {
-
 
     private static final List<FundType> fundTypeList = Arrays.asList(FundType.values());
 

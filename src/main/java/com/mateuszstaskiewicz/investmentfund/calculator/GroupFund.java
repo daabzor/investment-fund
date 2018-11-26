@@ -7,11 +7,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
 
-/**
-    GroupFund class keeps information about list of funds, investment amount and investment strategy percent.
-
-    This class is designed to work for each type of investment fund.
- */
 public class GroupFund implements GroupCalculator {
 
     private List<? extends InvestmentFund> fundList;
