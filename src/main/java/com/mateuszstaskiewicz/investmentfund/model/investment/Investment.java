@@ -11,7 +11,7 @@ public class Investment {
 
     private BigDecimal investmentAmount;
 
-    public Investment(InvestmentType investmentType, String investmentAmount) {
+    public Investment(final InvestmentType investmentType, final String investmentAmount) {
         this.investmentType = investmentType;
         this.investmentAmount = new BigDecimal(investmentAmount);
     }

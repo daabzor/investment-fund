@@ -13,7 +13,7 @@ public enum InvestmentType {
 
     private Strategy strategy;
 
-    InvestmentType(Strategy strategy) {
+    InvestmentType(final Strategy strategy) {
         this.strategy = strategy;
     }
 

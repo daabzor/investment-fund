@@ -5,4 +5,5 @@ public enum FundType {
     POLISH,
     FOREIGN,
     CASH,
+
 }

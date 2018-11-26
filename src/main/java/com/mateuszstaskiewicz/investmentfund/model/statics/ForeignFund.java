@@ -8,14 +8,15 @@ import lombok.EqualsAndHashCode;
 public class ForeignFund extends InvestmentFund {
 
     private static Long id;
-    public static FundType fundType = FundType.FOREIGN;
+
+    public static final FundType FUND_TYPE = FundType.FOREIGN;
 
     static {
         id = 1L;
     }
 
     public ForeignFund(final String name) {
-        super(id, name + " " + Long.toString(id), fundType);
+        super(id, name + " " + Long.toString(id), FUND_TYPE);
         id++;
     }
 

@@ -1,20 +1,15 @@
 package com.mateuszstaskiewicz.investmentfund.calculator;
 
 import com.mateuszstaskiewicz.investmentfund.model.statics.FundType;
-import com.mateuszstaskiewicz.investmentfund.model.statics.InvestmentFund;
-
-import java.util.Map;
-
 
 public interface InvestmentCalculator {
 
-    GroupCalculator getCalculatedFund(FundType fundType);
+    GroupCalculator getCalculatedFund(FundType type);
 
     String getUnSeparatedAmount();
 
-    String getAggregatedAmountFor(FundType fundType);
+    String getAggregatedAmountFor(FundType type);
 
-    String getAggregatedPercentFor(FundType fundType);
+    String getAggregatedPercentFor(FundType type);
 
-    Map<InvestmentFund, Map<String, String>> getAggregatedInvestmentInfoForType(FundType type);
 }

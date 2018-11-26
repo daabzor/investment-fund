@@ -19,7 +19,7 @@ public class GroupFund implements GroupCalculator {
 
     private BigDecimal strategyPercent;
 
-    public GroupFund(List<? extends InvestmentFund> fundList, BigDecimal amount, BigDecimal strategyPercent) {
+    public GroupFund(final List<? extends InvestmentFund> fundList, final BigDecimal amount, final BigDecimal strategyPercent) {
         this.fundList = fundList;
         this.amount = amount;
         this.strategyPercent = strategyPercent.setScale(4, RoundingMode.DOWN);
@@ -41,9 +41,10 @@ public class GroupFund implements GroupCalculator {
     }
 
     @Override
-    public BigDecimal getUnseparatedAmount() {
+    public BigDecimal getUnSeparatedAmount() {
         return amount.multiply(strategyPercent)
                 .subtract(getDividedAmount().multiply(getSizeOfGroup()))
                 .setScale(2, RoundingMode.DOWN);
     }
+
 }

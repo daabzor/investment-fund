@@ -26,5 +26,6 @@ public abstract class InvestmentFund {
         this.generalId = generalIdCounter;
         generalIdCounter++;
     }
+
 }
 
