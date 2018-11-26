@@ -4,12 +4,15 @@ import com.mateuszstaskiewicz.investmentfund.model.statics.FundType;
 import com.mateuszstaskiewicz.investmentfund.model.statics.InvestmentFund;
 import com.mateuszstaskiewicz.investmentfund.model.investment.Investment;
 import com.mateuszstaskiewicz.investmentfund.model.strategy.Strategy;
+import com.mateuszstaskiewicz.investmentfund.validator.InvestmentCalculatorValidator;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Data
 public class InvestmentCalculatorEngine implements InvestmentCalculator {
 
     private BigDecimal amount;
@@ -18,9 +21,10 @@ public class InvestmentCalculatorEngine implements InvestmentCalculator {
 
     private Strategy strategy;
 
-    private final List<FundType> fundTypeList = Arrays.asList(FundType.POLISH, FundType.FOREIGN, FundType.CASH);
+    private final List<FundType> fundTypeList = Arrays.asList(FundType.values());
 
     public InvestmentCalculatorEngine(final Investment investment, final List<InvestmentFund> fundList) {
+        InvestmentCalculatorValidator.validate(fundList);
         this.amount = investment.getInvestmentAmount();
         this.strategy = investment.getInvestmentType().getStrategy();
         this.fundList = fundList;

@@ -15,4 +15,5 @@ public class Investment {
         this.investmentType = investmentType;
         this.investmentAmount = new BigDecimal(investmentAmount);
     }
+
 }

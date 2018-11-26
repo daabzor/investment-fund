@@ -1,6 +1,7 @@
 package com.mateuszstaskiewicz.investmentfund.calculator;
 
 import com.mateuszstaskiewicz.investmentfund.model.statics.InvestmentFund;
+import com.mateuszstaskiewicz.investmentfund.validator.GroupCalculatorValidator;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -20,6 +21,7 @@ public class GroupFund implements GroupCalculator {
     private BigDecimal strategyPercent;
 
     public GroupFund(final List<? extends InvestmentFund> fundList, final BigDecimal amount, final BigDecimal strategyPercent) {
+        GroupCalculatorValidator.validate(fundList, amount, strategyPercent);
         this.fundList = fundList;
         this.amount = amount;
         this.strategyPercent = strategyPercent.setScale(4, RoundingMode.DOWN);
