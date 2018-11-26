@@ -29,6 +29,6 @@ public class InvestmentCalculatorValidatorTest extends BaseInvestmentTest {
         Investment investment = new Investment(InvestmentType.SAFE, "1000");
         InvestmentCalculator investmentCalculator = new InvestmentCalculatorEngine(investment, LIST_OF_1_POL_1_FOR_0_CASH_FUNDS);
     }
-    
+
 }
 
