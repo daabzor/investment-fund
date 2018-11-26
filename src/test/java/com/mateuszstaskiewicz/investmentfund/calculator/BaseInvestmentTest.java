@@ -16,6 +16,9 @@ public class BaseInvestmentTest {
 
     final static List<InvestmentFund> LIST_OF_2_POL_3_FOR_1_CASH_FUNDS = createFundsList(2,3,1);
     final static List<InvestmentFund> LIST_OF_3_POL_2_FOR_1_CASH_FUNDS = createFundsList(3,2,1);
+    final static List<InvestmentFund> LIST_OF_0_POL_1_FOR_1_CASH_FUNDS = createFundsList(0,1,1);
+    final static List<InvestmentFund> LIST_OF_1_POL_0_FOR_1_CASH_FUNDS = createFundsList(1,0,1);
+    final static List<InvestmentFund> LIST_OF_1_POL_1_FOR_0_CASH_FUNDS = createFundsList(1,1,0);
 
     final Investment SAFE_INVESTMENT_AMOUNT_10000 = new Investment(InvestmentType.SAFE, "10000");
     final Investment SAFE_INVESTMENT_AMOUNT_10001 = new Investment(InvestmentType.SAFE, "10001");
